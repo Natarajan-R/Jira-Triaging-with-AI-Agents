@@ -1,7 +1,7 @@
-# Autonomous AI Triage Crew  triage-ai-crew
+# Jira Tickets Triaging with Agentic AI 
 
 
-An AI multi-agent system built with CrewAI to automatically triage IT incident tickets. This project demonstrates a practical application of agentic AI workflows, showcasing how specialized agents can collaborate to perform complex tasks.
+An AI multi-agent system built with CrewAI to automatically triage Jira incident tickets. This project demonstrates a practical application of agentic AI workflows, showcasing how specialized agents can collaborate to perform complex tasks.
 
 ## 🚀 About This Project
 
@@ -27,7 +27,8 @@ The primary goal of this repository is to serve as an educational tool to demyst
 
 The application is designed as a sequential pipeline. An incident ticket enters at the start, and a structured JSON report is produced at the end. Each agent in the crew acts as a station on this assembly line.
 
-![System Architecture](./architecture.svg)
+<img width="794" height="463" alt="Screenshot from 2025-07-30 23-43-44" src="https://github.com/user-attachments/assets/94f87d4a-537b-4a0a-80cd-642c0261a0c5" />
+
 
 **The Agents:**
 
@@ -155,26 +156,26 @@ Follow these steps to run the AI Triage Crew on your local machine.
 ### Installation & Execution
 
 1.  **Clone the Repository:**
-    ```bash
-    git clone [Your-Repo-URL]
-    cd [your-repo-name]
-    ```
+    
+    git clone https://github.com/Natarajan-R/Jira-Triaging-with-AI-Agents
+    cd Jira-Triaging-with-AI-Agents
+    
 
 2.  **Create a Virtual Environment:**
-    ```bash
+    
     python3 -m venv .venv
     source .venv/bin/activate
-    ```
+
 
 3.  **Install Dependencies:**
-    ```bash
+    
     pip install -r requirements.txt
-    ```
+    
 
 4.  **Run the Application:**
-    ```bash
+    
     python main.py
-    ```
+    
 
 The script will execute the crew, and you will see the detailed thought process of each agent printed to the console, followed by the final merged JSON output.
 
