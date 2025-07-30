@@ -1,0 +1,47 @@
+{
+    "model": "mistral:latest",
+    "prompt": "### System:\nYou are Incident Classification Specialist... Your single task is to use the 'Ticket Classification Tool'...\n\n### User:\nCurrent Task: Classify the ticket below using the tool:```json\n{\"id\": \"INC-001\", \"title\": \"API Gateway Down\", ...}\n```\n...Begin!..."
+}
+
+
+{
+    "model": "mistral:latest",
+    "response": " I now have the incident ticket data. I will use the Ticket Classification Tool to classify the category of this ticket based on the given information.\n\nAction: Ticket Classification Tool\nAction Input: {'ticket_data': {'id': \"INC-001\", ...}}\n"
+}
+
+{
+    "model": "mistral:latest",
+    "prompt": "...### Assistant:\n I now have the incident ticket data. I will use the Ticket Classification Tool...\n\nObservation: {\n  \"ticket_id\": \"INC-001\",\n  \"category\": \"Application\",\n  \"tags\": [\n    \"outage\",\n    \"production\"\n  ]\n}\n\n### User:\nPlease continue.\n\n"
+}
+
+
+{
+    "model": "mistral:latest",
+    "response": " Thought: I now have the category and tags of the incident ticket based on the observation from the Ticket Classification Tool.\n\nFinal Answer: {\n  \"category\": \"Application\",\n  \"tags\": [\n    \"outage\",\n    \"production\"\n  ]\n}"
+}
+
+
+{
+    "model": "mistral:latest",
+    "prompt": "### System:\nYou are Final Analysis Agent... Your personal goal is: Use the 'Final Analysis Tool'...\n\n### User:\nCurrent Task: Determine severity and merge classification with the original ticket...\nThis is the context you're working with:\n{\n  \"category\": \"Application\",\n  \"tags\": [...]\n}\n...Begin!..."
+}
+
+
+{
+    "model": "mistral:latest",
+    "response": " I now have all necessary information to determine the final analysis.\n\nAction: Final Analysis Tool\n\nAction Input: {'ticket_data': {'id': \"INC-001\", ...}, 'classification_context': {'category': \"Application\", 'tags': [\"outage\", \"production\"]}}\n"
+}
+
+
+{
+    "model": "mistral:latest",
+    "prompt": "...### Assistant:\n I now have all necessary information to determine the final analysis...\n\nObservation: {\n  \"ticket_id\": \"INC-001\",\n  \"category\": \"Application\",\n  ...,\n  \"severity\": \"Critical\",\n  \"confidence\": 0.9\n}\n\n### User:\nPlease continue.\n\n"
+}
+
+
+{
+    "model": "mistral:latest",
+    "response": " Thought: I now have the severity and merged classification as the observation.\n\nFinal Answer: {\n  \"ticket_id\": \"INC-001\",\n  \"category\": \"Application\",\n  ...,\n  \"severity\": \"Critical\"\n}"
+}
+
+
